@@ -1,6 +1,7 @@
 package com.bridgelabz.springconcepts;
 
 import com.bridgelabz.springconcepts.component.DemoBean;
+import com.bridgelabz.springconcepts.component.EmployeeBean;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,10 @@ public class SpringConceptsApplication
 		logger.debug("Welcome to spring concept demo");
 		ApplicationContext context = SpringApplication.run(SpringConceptsApplication.class, args);
 		logger.debug("Checking context: ={}",context.getBean(DemoBean.class));
+		EmployeeBean employeeBean = context.getBean(EmployeeBean.class);
+		employeeBean.setEid(104);
+		employeeBean.setEname("Spring Framework Guru");
+		employeeBean.showEmployeeDetails();
 	}
 
 }
